@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Triggering Flow...</title>
+  </head>
+  <body>
+    <h2>Sending Mails to customer support team</h2>
+    <script>
+      fetch("https://prod-05.centralindia.logic.azure.com:443/workflows/8f395ccc2d8b4bd0aa3a1189c5ce370d/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=YzjKl15x_1rWdJktJBJ1E5_xs9AhGvBkO0kfX9D6wD0", {
+        method: "POST"
+      })
+      .then(response => {
+        document.body.innerHTML += "<p>✅ Mail will be sent soon!</p>";
+      })
+      .catch(error => {
+        document.body.innerHTML += "<p>❌ Error recieved.</p>";
+      });
+    </script>
+  </body>
+</html>
